@@ -19,6 +19,39 @@
             overflow-x: hidden;
         }
 
+        /* Logo SVG Style */
+        .bh-logo {
+            width: 50px;
+            height: 50px;
+            filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.5));
+            transition: transform 0.3s ease;
+        }
+
+        .bh-logo:hover {
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        /* Efeito Flutuante para a Logo Grande */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .hero-logo-container {
+            animation: float 4s ease-in-out infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bh-logo-big {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            filter: drop-shadow(0 0 30px rgba(167, 139, 250, 0.3));
+        }
+
         /* Header */
         header {
             position: fixed;
@@ -28,7 +61,7 @@
             backdrop-filter: blur(10px);
             background: rgba(15, 15, 30, 0.8);
             border-bottom: 1px solid rgba(147, 51, 234, 0.2);
-            padding: 15px 0;
+            padding: 10px 0;
         }
 
         .header-content {
@@ -38,15 +71,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            background: linear-gradient(135deg, #a78bfa 0%, #c084fc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         nav {
@@ -68,8 +92,8 @@
         }
 
         .whatsapp-btn {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             background: linear-gradient(135deg, #25d366 0%, #20ba5a 100%);
             border-radius: 50%;
             display: flex;
@@ -87,27 +111,27 @@
         }
 
         .whatsapp-btn svg {
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             fill: white;
         }
 
         /* Hero Section */
         .hero {
             margin-top: 80px;
-            padding: 120px 40px 80px;
+            padding: 100px 40px 80px;
             max-width: 1400px;
             margin-left: auto;
             margin-right: auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.2fr 0.8fr;
             gap: 60px;
             align-items: center;
         }
 
         .hero-content h1 {
             font-size: 56px;
-            line-height: 1.2;
+            line-height: 1.1;
             margin-bottom: 20px;
             background: linear-gradient(135deg, #ffffff 0%, #a78bfa 100%);
             -webkit-background-clip: text;
@@ -130,7 +154,7 @@
         }
 
         .btn-primary {
-            padding: 16px 40px;
+            padding: 16px 35px;
             background: linear-gradient(135deg, #25d366 0%, #20ba5a 100%);
             color: white;
             border: none;
@@ -150,7 +174,7 @@
         }
 
         .btn-secondary {
-            padding: 16px 40px;
+            padding: 16px 35px;
             background: transparent;
             color: #a78bfa;
             border: 2px solid #a78bfa;
@@ -168,27 +192,8 @@
             transform: translateY(-2px);
         }
 
-        .hero-image {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero-image img {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(167, 139, 250, 0.2);
-        }
-
-        /* Features Grid */
-        .features {
-            padding: 100px 40px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
+        /* Features */
+        .features { padding: 80px 40px; max-width: 1400px; margin: 0 auto; }
         .section-title {
             font-size: 42px;
             font-weight: 800;
@@ -203,260 +208,63 @@
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-bottom: 80px;
+            gap: 25px;
         }
 
         .feature-card {
-            background: linear-gradient(135deg, rgba(167, 139, 250, 0.05) 0%, rgba(192, 132, 252, 0.05) 100%);
-            border: 1px solid rgba(167, 139, 250, 0.2);
-            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(167, 139, 250, 0.1);
+            border-radius: 20px;
             padding: 40px;
-            transition: all 0.3s;
+            transition: 0.3s;
             backdrop-filter: blur(10px);
         }
 
         .feature-card:hover {
-            border-color: rgba(167, 139, 250, 0.5);
-            box-shadow: 0 8px 32px rgba(167, 139, 250, 0.15);
+            border-color: #a78bfa;
             transform: translateY(-5px);
+            background: rgba(167, 139, 250, 0.05);
         }
 
-        .feature-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
-
-        .feature-card h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-            color: #ffffff;
-            font-weight: 700;
-        }
-
-        .feature-card p {
-            color: #b0b0c0;
-            font-size: 15px;
-            line-height: 1.6;
-        }
-
-        /* Mockups Section */
-        .mockups {
-            padding: 100px 40px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .mockup-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-bottom: 80px;
-        }
-
-        .mockup-item {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(167, 139, 250, 0.2);
-            transition: transform 0.3s;
-        }
-
-        .mockup-item:hover {
-            transform: translateY(-10px);
-        }
-
-        .mockup-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 100px 40px;
-            background: linear-gradient(135deg, rgba(167, 139, 250, 0.05) 0%, rgba(192, 132, 252, 0.05) 100%);
-            border-top: 1px solid rgba(167, 139, 250, 0.2);
-            border-bottom: 1px solid rgba(167, 139, 250, 0.2);
-        }
-
-        .services-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-
-        .service-item {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(167, 139, 250, 0.05) 100%);
-            border: 1px solid rgba(167, 139, 250, 0.2);
-            border-radius: 16px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.3s;
-            backdrop-filter: blur(10px);
-        }
-
-        .service-item:hover {
-            border-color: rgba(167, 139, 250, 0.5);
-            transform: translateY(-5px);
-            box-shadow: 0 8px 32px rgba(167, 139, 250, 0.15);
-        }
-
-        .service-icon {
-            font-size: 48px;
-            margin-bottom: 15px;
-        }
-
-        .service-item h4 {
-            color: #ffffff;
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .service-item p {
-            color: #b0b0c0;
-            font-size: 14px;
-        }
-
-        /* Stats Section */
-        .stats {
-            padding: 100px 40px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            text-align: center;
-        }
-
-        .stat-item h3 {
-            font-size: 48px;
-            font-weight: 800;
-            background: linear-gradient(135deg, #a78bfa 0%, #c084fc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 10px;
-        }
-
-        .stat-item p {
-            color: #b0b0c0;
-            font-size: 16px;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 100px 40px;
-            background: linear-gradient(135deg, #a78bfa 0%, #c084fc 100%);
-            text-align: center;
-            margin-top: 80px;
-        }
-
-        .cta-section h2 {
-            font-size: 48px;
-            color: white;
-            margin-bottom: 20px;
-            font-weight: 800;
-        }
-
-        .cta-section p {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-section .btn-primary {
-            background: #25d366;
-            color: white;
-        }
-
-        .cta-section .btn-primary:hover {
-            background: #20ba5a;
-        }
+        .feature-icon { font-size: 32px; margin-bottom: 15px; }
 
         /* Footer */
         footer {
             background: #0a0a14;
-            border-top: 1px solid rgba(167, 139, 250, 0.2);
-            padding: 40px;
+            padding: 60px 40px;
             text-align: center;
-            color: #808090;
-            font-size: 14px;
+            border-top: 1px solid rgba(167, 139, 250, 0.1);
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
-            .hero {
-                grid-template-columns: 1fr;
-                padding: 80px 20px 60px;
-            }
-
-            .hero-content h1 {
-                font-size: 36px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .header-content {
-                padding: 0 20px;
-            }
-
-            nav {
-                gap: 20px;
-            }
-
-            nav a {
-                display: none;
-            }
-
-            .section-title {
-                font-size: 32px;
-            }
-
-            .features,
-            .mockups,
-            .services,
-            .stats {
-                padding: 60px 20px;
-            }
-
-            .cta-section {
-                padding: 60px 20px;
-            }
-
-            .cta-section h2 {
-                font-size: 32px;
-            }
+        @media (max-width: 968px) {
+            .hero { grid-template-columns: 1fr; text-align: center; }
+            .hero-buttons { justify-content: center; flex-direction: column; }
+            .bh-logo-big { max-width: 250px; }
+            .header-content { padding: 0 20px; }
+            nav a { display: none; }
         }
     </style>
 </head>
 <body>
+
     <header>
         <div class="header-content">
-            <div class="logo">BusinessHub</div>
+            <div class="logo">
+                <svg class="bh-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="100" height="100" rx="20" fill="#0A0A0A"/>
+                    <path d="M30 30V70H55C62 70 68 64 68 57V57C68 52 65 48 60 46C65 44 68 40 68 35V35C68 30 63 25 57 25H30V30Z" stroke="#a78bfa" stroke-width="6" stroke-linejoin="round"/>
+                    <path d="M75 30V70M55 50H75" stroke="#a78bfa" stroke-width="6" stroke-linecap="round"/>
+                    <path d="M35 60L45 50L55 55L65 35" stroke="#a78bfa" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M60 35H65V40" stroke="#a78bfa" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
             <nav>
                 <a href="#features">Recursos</a>
                 <a href="#mockups">Galeria</a>
                 <a href="#services">Serviços</a>
-                <a href="#stats">Resultados</a>
-                <a href="https://wa.me/5554984226370" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.255.949c-1.238.505-2.437 1.265-3.355 2.181-1.335 1.335-2.271 3.019-2.637 4.853-.366 1.833-.122 3.7.714 5.423a9.847 9.847 0 003.15 3.933c1.355.798 2.954 1.335 4.644 1.348h.004c5.444 0 9.867-4.422 9.867-9.867 0-1.52-.33-2.988-.995-4.383A9.865 9.865 0 0012.051 2.75c-5.487 0-9.867 4.422-9.867 9.867 0 1.59.372 3.088 1.025 4.408l-.645 2.505c-.182.703.055 1.438.64 1.955.585.517 1.466.645 2.229.335l2.395-.798A9.798 9.798 0 0112.051 22c5.444 0 9.867-4.422 9.867-9.867S17.495 2.266 12.051 2.266z"/>
-                    </svg>
+                <a href="https://wa.me/5554984226370" class="whatsapp-btn">
+                    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.255.949c-1.238.505-2.437 1.265-3.355 2.181-1.335 1.335-2.271 3.019-2.637 4.853-.366 1.833-.122 3.7.714 5.423a9.847 9.847 0 003.15 3.933c1.355.798 2.954 1.335 4.644 1.348h.004c5.444 0 9.867-4.422 9.867-9.867 0-1.52-.33-2.988-.995-4.383A9.865 9.865 0 0012.051 2.75c-5.487 0-9.867 4.422-9.867 9.867 0 1.59.372 3.088 1.025 4.408l-.645 2.505c-.182.703.055 1.438.64 1.955.585.517 1.466.645 2.229.335l2.395-.798A9.798 9.798 0 0112.051 22c5.444 0 9.867-4.422 9.867-9.867S17.495 2.266 12.051 2.266z"/></svg>
                 </a>
             </nav>
         </div>
@@ -464,139 +272,56 @@
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Seu Negócio de Beleza Sempre Cheio</h1>
-            <p>Agendamentos 24/7, pagamentos automáticos via PIX, gestão completa de clientes e relatórios em tempo real. Tudo que você precisa para crescer seu negócio.</p>
+            <h1>Sua Beleza, <br>Sua Gestão.</h1>
+            <p>Agendamentos 24/7, pagamentos automáticos via PIX e relatórios em tempo real. A evolução do seu estúdio começa aqui.</p>
             <div class="hero-buttons">
-                <a href="https://wa.me/5554984226370" class="btn-primary" target="_blank">Falar com Consultor no WhatsApp</a>
-                <a href="#features" class="btn-secondary">Conhecer Recursos</a>
+                <a href="https://wa.me/5554984226370" class="btn-primary">Falar com Consultor</a>
+                <a href="#features" class="btn-secondary">Recursos</a>
             </div>
-            <p style="font-size: 14px; color: #808090;">Sem cartão de crédito. Sem compromisso. Comece em 2 minutos.</p>
         </div>
-        <div class="hero-image">
-            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663297121864/2rbeiGANAYfzHHUaUFJ8Xp/mockup-dashboard-pt-GH23AzYKfLjF5Kqhi5W9LV.webp" alt="Dashboard BusinessHub">
+        <div class="hero-logo-container">
+            <svg class="bh-logo-big" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100" height="100" rx="20" fill="#0A0A0A"/>
+                <path d="M30 30V70H55C62 70 68 64 68 57V57C68 52 65 48 60 46C65 44 68 40 68 35V35C68 30 63 25 57 25H30V30Z" stroke="#a78bfa" stroke-width="5" stroke-linejoin="round"/>
+                <path d="M75 30V70M55 50H75" stroke="#a78bfa" stroke-width="5" stroke-linecap="round"/>
+                <path d="M35 60L45 50L55 55L65 35" stroke="#a78bfa" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M60 35H65V40" stroke="#a78bfa" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="42" y="62" width="4" height="8" fill="#a78bfa" rx="1"/>
+                <rect x="48" y="58" width="4" height="12" fill="#a78bfa" rx="1"/>
+                <rect x="54" y="52" width="4" height="18" fill="#a78bfa" rx="1"/>
+            </svg>
         </div>
     </section>
 
     <section class="features" id="features">
-        <h2 class="section-title">Recursos Poderosos</h2>
+        <h2 class="section-title">Tecnologia para Crescer</h2>
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon">📅</div>
                 <h3>Agendamentos 24/7</h3>
-                <p>Seus clientes agendamsolzinhos pelo WhatsApp ou link. Sem você precisar atender ligação.</p>
+                <p>Seus clientes agendam sozinhos pelo link exclusivo. Sua agenda trabalha enquanto você descansa.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">💳</div>
                 <h3>Pagamentos PIX</h3>
-                <p>Receba automaticamente via PIX. Confirmação instantânea. Sem taxas extras.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">👥</div>
-                <h3>Gestão de Clientes</h3>
-                <p>Controle completo: histórico, preferências, gastos. Programa de fidelização automático.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>Relatórios Avançados</h3>
-                <p>Saiba exatamente quanto você está ganhando, quem são seus melhores clientes.</p>
+                <p>Receba de forma antecipada ou no local com confirmação instantânea no painel.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🔔</div>
-                <h3>Notificações Automáticas</h3>
-                <p>Lembretes via WhatsApp 24h antes. Confirmação automática. Reduz no-show em 80%.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3>Fácil de Usar</h3>
-                <p>Interface intuitiva. Setup em 2 minutos. Suporte em português. Sem complicações.</p>
+                <h3>Lembretes</h3>
+                <p>Reduza faltas em até 80% com notificações automáticas enviadas diretamente ao WhatsApp do cliente.</p>
             </div>
         </div>
-    </section>
-
-    <section class="mockups" id="mockups">
-        <h2 class="section-title">Veja Como Funciona</h2>
-        <div class="mockup-grid">
-            <div class="mockup-item">
-                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663297121864/2rbeiGANAYfzHHUaUFJ8Xp/dashboard-cilios-pt-JTJC7TDYQRZn2RJJ2WHJD8.webp" alt="Dashboard Estúdio de Cilios">
-            </div>
-            <div class="mockup-item">
-                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663297121864/2rbeiGANAYfzHHUaUFJ8Xp/dashboard-sobrancelha-pt-QbD44vyX4GGvp7Q8XTMuDi.webp" alt="Dashboard Especialista em Sobrancelha">
-            </div>
-            <div class="mockup-item">
-                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663297121864/2rbeiGANAYfzHHUaUFJ8Xp/dashboard-unhas-pt-fwFmnpU4Susd44DQhfYWED.webp" alt="Dashboard Salão de Unhas">
-            </div>
-        </div>
-    </section>
-
-    <section class="services" id="services">
-        <div class="services-container">
-            <h2 class="section-title">Perfeito Para</h2>
-            <div class="services-grid">
-                <div class="service-item">
-                    <div class="service-icon">💇</div>
-                    <h4>Salão de Cabelo</h4>
-                    <p>Gestão completa de agendamentos e clientes</p>
-                </div>
-                <div class="service-item">
-                    <div class="service-icon">💅</div>
-                    <h4>Salão de Unhas</h4>
-                    <p>Controle de clientes e faturamento</p>
-                </div>
-                <div class="service-item">
-                    <div class="service-icon">✨</div>
-                    <h4>Estúdio de Cilios</h4>
-                    <p>Agendamentos e pagamentos automáticos</p>
-                </div>
-                <div class="service-item">
-                    <div class="service-icon">💄</div>
-                    <h4>Maquiagem</h4>
-                    <p>Gestão profissional de agendamentos</p>
-                </div>
-                <div class="service-item">
-                    <div class="service-icon">🧑</div>
-                    <h4>Especialista em Sobrancelha</h4>
-                    <p>Sistema completo de gestão</p>
-                </div>
-                <div class="service-item">
-                    <div class="service-icon">💆</div>
-                    <h4>Estética e Bem-estar</h4>
-                    <p>Controle total do negócio</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="stats" id="stats">
-        <h2 class="section-title">Resultados Comprovados</h2>
-        <div class="stats-grid">
-            <div class="stat-item">
-                <h3>+300%</h3>
-                <p>Aumento de Agendamentos</p>
-            </div>
-            <div class="stat-item">
-                <h3>-80%</h3>
-                <p>Trabalho Administrativo</p>
-            </div>
-            <div class="stat-item">
-                <h3>+150%</h3>
-                <p>Aumento de Faturamento</p>
-            </div>
-            <div class="stat-item">
-                <h3>98%</h3>
-                <p>Satisfação de Clientes</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <h2>Pronto para Crescer?</h2>
-        <p>Comece agora mesmo. Centenas de salões já estão usando e aumentando suas receitas através do nosso atendimento exclusivo.</p>
-        <a href="https://wa.me/5554984226370" class="btn-primary" target="_blank">Conversar Agora no WhatsApp</a>
     </section>
 
     <footer>
-        <p>&copy; 2026 BusinessHub. Todos os direitos reservados.</p>
-        <p>Transformando negócios de beleza em histórias de sucesso</p>
+        <svg class="bh-logo" style="width:30px; height:30px; margin-bottom: 20px;" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="100" height="100" rx="20" fill="#1a1a2e"/>
+            <path d="M30 30V70H55C62 70 68 64 68 57V57C68 52 65 48 60 46C65 44 68 40 68 35V35C68 30 63 25 57 25H30V30Z" stroke="#a78bfa" stroke-width="6"/>
+            <path d="M75 30V70M55 50H75" stroke="#a78bfa" stroke-width="6"/>
+        </svg>
+        <p>&copy; 2026 BusinessHub. Inteligência para o mercado da beleza.</p>
     </footer>
+
 </body>
 </html>
