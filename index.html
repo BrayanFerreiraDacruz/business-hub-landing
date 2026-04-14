@@ -19,17 +19,30 @@
             overflow-x: hidden;
         }
 
-        /* Estilização da Logo */
-        .logo-svg {
-            width: 45px;
-            height: 45px;
-            display: block;
-            filter: drop-shadow(0 0 5px rgba(167, 139, 250, 0.4));
-            transition: transform 0.3s ease;
+        /* Estilização da Logo Original com Efeito 3D */
+        .logo-container {
+            perspective: 1000px;
         }
 
-        .logo-svg:hover {
-            transform: scale(1.1);
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            display: block;
+            object-fit: contain;
+            border-radius: 12px;
+            /* Animação 3D ao abrir */
+            animation: flip3D 2.5s ease-in-out;
+            transition: transform 0.5s;
+        }
+
+        @keyframes flip3D {
+            0% { transform: rotateY(0deg); }
+            50% { transform: rotateY(180deg); }
+            100% { transform: rotateY(360deg); }
+        }
+
+        .logo-img:hover {
+            transform: scale(1.1) rotateY(10deg);
         }
 
         /* Header */
@@ -41,7 +54,7 @@
             backdrop-filter: blur(10px);
             background: rgba(15, 15, 30, 0.8);
             border-bottom: 1px solid rgba(147, 51, 234, 0.2);
-            padding: 10px 0; /* Ajustado para a logo */
+            padding: 10px 0;
         }
 
         .header-content {
@@ -53,7 +66,6 @@
             align-items: center;
         }
 
-        /* Removido o gradiente de texto da classe logo original para focar no SVG */
         .logo {
             display: flex;
             align-items: center;
@@ -451,11 +463,6 @@
             .cta-section h2 {
                 font-size: 32px;
             }
-            
-            .logo-svg {
-                width: 40px;
-                height: 40px;
-            }
         }
     </style>
 </head>
@@ -463,15 +470,9 @@
     <header>
         <div class="header-content">
             <div class="logo">
-                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="100" height="100" rx="22" fill="#0A0A0A"/>
-                    <path d="M28 25V75H55C65 75 72 68 72 58V58C72 52 68 47 62 45C68 43 72 38 72 32V32C72 25 65 20 55 20H28V25Z" stroke="#a78bfa" stroke-width="6" fill="none"/>
-                    <path d="M78 25V75M58 50H78" stroke="#a78bfa" stroke-width="6" stroke-linecap="round"/>
-                    <path d="M35 60L45 50L55 55L68 35" stroke="#a78bfa" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                    <path d="M62 35H68V41" stroke="#a78bfa" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                    <rect x="42" y="62" width="5" height="10" rx="1" fill="#a78bfa"/>
-                    <rect x="50" y="58" width="5" height="14" rx="1" fill="#a78bfa"/>
-                </svg>
+                <div class="logo-container">
+                    <img src="WhatsApp Image 2026-04-12 at 12.05.27 (1).jpeg" alt="BusinessHub Logo" class="logo-img">
+                </div>
             </div>
             <nav>
                 <a href="#features">Recursos</a>
@@ -508,7 +509,7 @@
             <div class="feature-card">
                 <div class="feature-icon">📅</div>
                 <h3>Agendamentos 24/7</h3>
-                <p>Seus clientes agendamsolzinhos pelo WhatsApp ou link. Sem você precisar atender ligação.</p>
+                <p>Seus clientes agendam sozinhos pelo WhatsApp ou link. Sem você precisar atender ligação.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">💳</div>
